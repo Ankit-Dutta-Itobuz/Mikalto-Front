@@ -8,14 +8,14 @@ body {
   overflow-x: hidden;
 }
 
-.landingFormBackground {
+.landingBackground {
   width: 98vw;
-  background-size: cover;
+  background-size: contain;
   width: 98vw;
   height: 80vh;
 }
 
-.landingFormChild {
+.landingChild {
   width: 40vw;
 }
 
@@ -80,7 +80,7 @@ body {
   padding-right: 8%;
 }
 
-.detailSwipperBg {
+.carouselImg {
   background-size: cover;
   height: 700px;
 }
@@ -243,7 +243,7 @@ body {
   object-fit: cover;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   body {
     overflow-x: hidden;
   }
@@ -252,17 +252,11 @@ body {
     height: 1200px;
   }
 
-  .landingFormBackground {
+  .landingBackground {
     flex-direction: column;
     position: relative;
     row-gap: 20px;
   }
-
-  /* .landingFormView {
-    position: absolute;
-    width: 100%;
-    top: 100px;
-  } */
 
   .landingForm {
     position: absolute;
@@ -270,7 +264,7 @@ body {
     top: 740px;
   }
 
-  .welcomeBg {
+  .welcomeImg {
     display: none;
   }
 
@@ -279,7 +273,7 @@ body {
     padding-left: 30px;
   }
 
-  .detailSec {
+  .carouselSec {
     flex-direction: column;
   }
 
@@ -287,9 +281,9 @@ body {
     width: 100%;
   }
 
-  .detailSwipperBg {
+  .carouselImg {
     width: 100%;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     height: 250px;
   }
@@ -315,6 +309,10 @@ body {
 
   .mapSec {
     flex-direction: column;
+  }
+
+  iframe{
+    height: 400px;
   }
 
   .natureBg {

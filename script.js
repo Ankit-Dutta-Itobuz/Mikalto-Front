@@ -23,38 +23,32 @@ async function getData() {
   document.getElementById(
     "landingBg"
   ).style.backgroundImage = `url(${res.landingSec.image})`;
+  document.getElementById("landingSubText").innerHTML =
+    res.landingSec.landingText;
+  document.getElementById("priceDataStandard").innerHTML =
+    res.carouselSec.carousel1.text;
   document.getElementById(
-    "landingSubText"
-  ).textContent = `${res.landingSec.landingText}`;
-  document.getElementById("priceDataStandard").textContent =`${res.carouselSec.carousel1.text}`;
-  document.getElementById("imgStandard").style.backgroundImage = `url(${res.carouselSec.carousel1.image})`;
-  document.getElementById("priceDataConference").textContent =`${res.carouselSec.carousel2.text}`;
-  document.getElementById("imgConference").style.backgroundImage = `url(${res.carouselSec.carousel2.image})`;
-  document.getElementById("priceDataPremium").textContent =`${res.carouselSec.carousel3.text}`;
-  document.getElementById("imgPremium").style.backgroundImage = `url(${res.carouselSec.carousel3.image})`;
+    "imgStandard"
+  ).style.backgroundImage = `url(${res.carouselSec.carousel1.image})`;
+  document.getElementById("priceDataConference").innerHTML =
+    res.carouselSec.carousel2.text;
+  document.getElementById(
+    "imgConference"
+  ).style.backgroundImage = `url(${res.carouselSec.carousel2.image})`;
+  document.getElementById("priceDataPremium").innerHTML =
+    res.carouselSec.carousel3.text;
+  document.getElementById(
+    "imgPremium"
+  ).style.backgroundImage = `url(${res.carouselSec.carousel3.image})`;
 }
 getData();
 function formHandle(event) {
   event.preventDefault();
   let formData = {
-    checkIn: document.getElementById("checkIn").value,
-    checkOut: document.getElementById("checkOut").value,
-    adults: document.getElementById("adult").value,
-    childrens: document.getElementById("children").value,
+    checkInDate: document.getElementById("checkIn").value,
+    checkOutDate: document.getElementById("checkOut").value,
+    adultNum: document.getElementById("adult").value,
+    childrenNum: document.getElementById("children").value,
   };
   console.log(formData);
-  fetch("http://localhost:8000/", {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-    body: JSON.stringify(formData),
-  }).then(() => {
-    alert("Form submitted!");
-    document.getElementById("checkIn").value = null;
-    document.getElementById("checkOut").value = null;
-    document.getElementById("adult").value = "0";
-    document.getElementById("children").value = "0";
-  });
 }
-
